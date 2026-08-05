@@ -1,0 +1,19 @@
+{
+  "name": "padlet-agent-plugins",
+  "owner": {
+    "name": "Padlet"
+  },
+  "metadata": {
+    "description": "Padlet plugins for AI coding agents"
+  },
+  "plugins": [
+    {
+      "name": "padlet",
+      "source": ".",
+      "description": "Work with your Padlet boards from your agent through Padlet's hosted MCP server — read, search, create, and edit padlets and posts in conversation.",
+      "minClientVersions": {
+        "cursor": "3.13.0"
+      }
+    }
+  ]
+}
