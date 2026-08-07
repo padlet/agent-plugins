@@ -1,6 +1,6 @@
 {
   "name": "padlet-agent-plugins",
-  "description": "Padlet plugins for AI coding agents",
+  "description": "Padlet plugins for AI agents",
   "owner": {
     "name": "Padlet"
   },

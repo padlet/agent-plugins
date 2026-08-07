@@ -4,7 +4,7 @@
     "name": "Padlet"
   },
   "metadata": {
-    "description": "Padlet plugins for AI coding agents"
+    "description": "Padlet plugins for AI agents"
   },
   "plugins": [
     {

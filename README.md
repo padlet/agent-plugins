@@ -1,4 +1,4 @@
-# Padlet for AI coding agents
+# Padlet for AI agents
 
 Work with your [Padlet](https://padlet.com) boards from inside your agent. This plugin connects
 the agent to Padlet's hosted MCP server, so you can read, search, create, and edit padlets by
