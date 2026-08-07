@@ -10,6 +10,5 @@
   "repository": "https://github.com/padlet/agent-plugins",
   "license": "MIT",
   "keywords": ["padlet", "boards", "collaboration", "education", "mcp"],
-  "logo": "assets/logo.svg",
-  "mcpServers": "./mcp.json"
+  "logo": "assets/logo.svg"
 }

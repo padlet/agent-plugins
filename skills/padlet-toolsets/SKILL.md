@@ -21,7 +21,7 @@ and Padlet's full surface is 69 tools on its own.
 
 ## The registration file
 
-The plugin's MCP registration is at `<plugin-root>/mcp.json`. Derive `<plugin-root>` from this
+The plugin's MCP registration is at `<plugin-root>/.mcp.json`. Derive `<plugin-root>` from this
 file's own path by removing `skills/padlet-toolsets/SKILL.md` from the end. One registration file
 serves every host the plugin supports.
 
@@ -46,7 +46,7 @@ not meaningful — treat the lists as sets when comparing.
 
 ### 1. Read the current state
 
-Read `<plugin-root>/mcp.json` and parse the current `toolsets` value. Present the table above,
+Read `<plugin-root>/.mcp.json` and parse the current `toolsets` value. Present the table above,
 making clear which toolsets are currently enabled. Pick whatever format reads best in the
 client — a checklist, a table, a grouped summary.
 

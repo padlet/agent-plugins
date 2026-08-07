@@ -26,6 +26,6 @@
     "collaboration",
     "education"
   ],
-  "mcpServers": "./mcp.json",
+  "mcpServers": "./.mcp.json",
   "skills": "./skills/"
 }

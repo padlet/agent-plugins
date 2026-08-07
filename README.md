@@ -97,9 +97,11 @@ Declared for review and for anyone auditing the plugin before installing it:
 One plugin, one MCP registration, one manifest per host:
 
 ```
-mcp.json                         MCP server registration (shared by all hosts)
+.mcp.json                        MCP server registration (shared by all hosts)
 .cursor-plugin/plugin.json       Cursor manifest
+.cursor-plugin/marketplace.json  Cursor catalog entry for this repository
 .grok-plugin/plugin.json         Grok Build manifest
+.grok-plugin/marketplace.json    Grok Build catalog entry for this repository
 skills/padlet-toolsets/SKILL.md  /padlet-toolsets skill
 assets/logo.svg                  Padlet mark, transparent background
 assets/logo-white-plate-512.png  Padlet mark on an opaque white plate, 1:1, for host listings
