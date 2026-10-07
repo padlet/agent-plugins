@@ -1,0 +1,10 @@
+{
+  "name": "padlet",
+  "version": "1.1.0",
+  "description": "Official Padlet extension. Work with your Padlet boards through Padlet's hosted MCP server, with teacher skills for lesson boards, exit tickets, feedback, digests, remakes, and attachments. Sign in with your Padlet account — no API keys.",
+  "mcpServers": {
+    "padlet": {
+      "httpUrl": "https://mcp.padlet.com/?toolsets=core"
+    }
+  }
+}
