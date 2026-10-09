@@ -13,6 +13,9 @@ All notable changes to this plugin will be documented here.
   content as untrusted data; `padlet-student-feedback` always shows drafted comments and scores
   and waits for the teacher's approval before writing.
 - `/padlet-toolsets` now also updates the Gemini registration in `gemini-extension.json`.
+- New `padlet-setup` skill: confirms the Padlet sign-in, shows recent padlets and the enabled
+  toolsets, and suggests a first task. The Codex manifest registers it as the OpenAI onboarding
+  skill (`extensions["com.openai"].onboardingSkill`), so ChatGPT and Codex run it after install.
 - README: per-client install instructions — plugin installs, server-only one-liners (Claude
   Code, Cursor and VS Code deep links, Gemini CLI), and ChatGPT / Claude.ai connectors — plus a
   note that community `padlet-mcp` packages are unofficial.

@@ -12,6 +12,11 @@
   "keywords": ["padlet", "boards", "collaboration", "education", "teachers", "mcp"],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/padlet-setup/SKILL.md"
+    }
+  },
   "interface": {
     "displayName": "Padlet",
     "shortDescription": "Build and run class boards in Padlet",

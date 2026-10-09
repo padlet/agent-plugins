@@ -118,6 +118,7 @@ instructions.
 | `padlet-class-digest` | Weekly roundup across your class boards: activity, highlights, themes, what needs attention | `core` |
 | `padlet-remake-board` | Copies a board for a new class without last class's posts, comments, or reactions | `board_admin` |
 | `padlet-attach-files` | Attaches local files (by upload) or web links to posts | `core` |
+| `padlet-setup` | First-run check: confirms the sign-in, shows your recent padlets and what's turned on, suggests a first task. ChatGPT and Codex run it after install | `core` |
 | `padlet-toolsets` | Shows and changes which Padlet toolsets the plugin requests | — |
 
 ## Using more of Padlet
