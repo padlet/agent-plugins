@@ -21,16 +21,24 @@ and Padlet's full surface is 69 tools on its own.
 
 ## The registration file
 
-The plugin's MCP registration is at `<plugin-root>/.mcp.json`. Derive `<plugin-root>` from this
-file's own path by removing `skills/padlet-toolsets/SKILL.md` from the end. One registration file
-serves every host the plugin supports.
+Derive `<plugin-root>` from this file's own path by removing `skills/padlet-toolsets/SKILL.md`
+from the end. The plugin registers the Padlet server in two files:
 
-It contains a single server entry whose URL carries the active toolsets as a comma-separated
-`toolsets` query parameter:
+| File | Read by | Key holding the URL |
+| --- | --- | --- |
+| `<plugin-root>/.mcp.json` | Claude Code, Codex, Cursor, Grok Build | `mcpServers.padlet.url` |
+| `<plugin-root>/gemini-extension.json` | Gemini CLI | `mcpServers.padlet.httpUrl` |
+
+Edit the file for the host you are running in. When in doubt, edit both and keep their
+`toolsets` values identical. Each holds a single server entry whose URL carries the active
+toolsets as a comma-separated `toolsets` query parameter:
 
 ```json
 { "mcpServers": { "padlet": { "type": "http", "url": "https://mcp.padlet.com/?toolsets=core" } } }
 ```
+
+Requesting `core` also brings in the two file-upload tools (`start_attachment_upload`,
+`complete_attachment_upload`); they are not a separate choice.
 
 ### Editing rule
 
@@ -46,7 +54,7 @@ not meaningful — treat the lists as sets when comparing.
 
 ### 1. Read the current state
 
-Read `<plugin-root>/.mcp.json` and parse the current `toolsets` value. Present the table above,
+Read the registration file for the current host and parse the current `toolsets` value. Present the table above,
 making clear which toolsets are currently enabled. Pick whatever format reads best in the
 client — a checklist, a table, a grouped summary.
 
@@ -71,7 +79,7 @@ Ask for clarification if it is ambiguous.
 
 ### 4. Apply and confirm
 
-Make the edit, then tell the user which toolsets are now enabled and that the client has to
+Make the edit (in both files when you edited both), then tell the user which toolsets are now enabled and that the client has to
 reload before it re-reads the registration. Give the instruction for the client you are actually
 running in:
 
@@ -79,8 +87,12 @@ running in:
   the shortcut for the user's actual operating system) and run **Developer: Reload Window**. If
   the Padlet server then asks for authentication, run **Cursor Settings: Tools & MCP** from the
   command palette and sign in to the `padlet` server.
+- **Gemini CLI** — exit and restart `gemini`; run `/mcp auth padlet` if it asks to sign in.
 - **Any other client** — restart the session or the app so the plugin's MCP servers reconnect,
   then complete the Padlet sign-in prompt if one appears.
+
+Teacher workflows that need a non-`core` toolset: remaking a board for a new class and saving
+scores both need `board_admin`.
 
 Also tell the user, once, that this setting lives inside the installed plugin and will revert
 to `core` if the plugin is updated or reinstalled — they can re-run this skill to restore it.

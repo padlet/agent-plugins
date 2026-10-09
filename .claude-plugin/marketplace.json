@@ -1,0 +1,18 @@
+{
+  "name": "padlet-agent-plugins",
+  "owner": {
+    "name": "Padlet"
+  },
+  "metadata": {
+    "description": "Padlet plugins for AI agents"
+  },
+  "plugins": [
+    {
+      "name": "padlet",
+      "source": "./",
+      "description": "Work with your Padlet boards through Padlet's hosted MCP server, with teacher skills for lesson boards, exit tickets, feedback, digests, remakes, and attachments.",
+      "category": "productivity",
+      "homepage": "https://padlet.com"
+    }
+  ]
+}

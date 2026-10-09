@@ -1,0 +1,20 @@
+{
+  "name": "padlet-agent-plugins",
+  "interface": {
+    "displayName": "Padlet"
+  },
+  "plugins": [
+    {
+      "name": "padlet",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

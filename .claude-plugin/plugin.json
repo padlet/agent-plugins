@@ -1,0 +1,21 @@
+{
+  "name": "padlet",
+  "displayName": "Padlet",
+  "version": "1.1.0",
+  "description": "Official Padlet plugin. Connects Claude to Padlet's hosted MCP server and adds teacher skills: build a lesson board, summarise exit tickets, draft feedback on student posts, weekly class digests, remake boards for a new class, and attach files. Sign in with your own Padlet account — no API keys.",
+  "author": {
+    "name": "Padlet",
+    "url": "https://padlet.com"
+  },
+  "homepage": "https://padlet.com",
+  "repository": "https://github.com/padlet/agent-plugins",
+  "license": "MIT",
+  "keywords": [
+    "padlet",
+    "boards",
+    "collaboration",
+    "education",
+    "teachers",
+    "mcp"
+  ]
+}
