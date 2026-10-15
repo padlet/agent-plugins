@@ -9,12 +9,24 @@ your browser the first time the agent connects.
 
 ## Installing
 
-The plugin supports **Cursor** and **Grok Build**, both of which install plugins from a source
-repository — point your host at this repository:
+The plugin supports **Cursor** and **Grok Build**.
+
+**Grok Build** — install straight from this repository:
+
+```
+grok plugin install padlet/agent-plugins --trust
+```
+
+**Cursor** — on a Teams or Enterprise plan, an admin can add this repository as a team
+marketplace (**Dashboard → Plugins & MCPs → Add Marketplace → Import from Repo**), and
+everyone can then install it from **Customize**:
 
 ```
 https://github.com/padlet/agent-plugins
 ```
+
+On any plan you can copy the repository into `~/.cursor/plugins/local/padlet` and reload the
+window.
 
 You can also skip the plugin and register the MCP server directly with any client that speaks
 MCP over streamable HTTP:
@@ -111,6 +123,12 @@ assets/logo-white-plate-512.png  Padlet mark on an opaque white plate, 1:1, for 
 
 - Padlet help centre: https://padlet.help
 - Issues with this plugin: https://github.com/padlet/agent-plugins/issues
+
+## Privacy and terms
+
+Your use of Padlet through this plugin is covered by Padlet's
+[Privacy Policy](https://padlet.com/about/privacy) and
+[Terms of Service](https://padlet.com/about/terms).
 
 ## License
 

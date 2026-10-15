@@ -8,8 +8,8 @@
     {
       "name": "padlet",
       "description": "Work with your Padlet boards through Padlet's hosted MCP server — read, search, create, and edit padlets and posts in conversation. Sign in with your own Padlet account; no API keys.",
-      "category": "development",
-      "source": "./",
+      "category": "productivity",
+      "source": { "source": "url", "url": "https://github.com/padlet/agent-plugins" },
       "homepage": "https://padlet.com",
       "keywords": ["padlet", "padlet board", "padlet wall", "padlet post"],
       "domains": ["padlet.com", "padlet.help", "mcp.padlet.com"]
