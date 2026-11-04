@@ -34,7 +34,7 @@ MCP over streamable HTTP:
 ```json
 {
   "mcpServers": {
-    "padlet": { "type": "http", "url": "https://mcp.padlet.com/?toolsets=core" }
+    "padlet": { "type": "http", "url": "https://mcp.padlet.com/" }
   }
 }
 ```
@@ -52,44 +52,30 @@ in Padlet itself.
 - "Add each item in TODO.md as a post on my Sprint Planning board."
 - "What's on the Design Feedback board? Group the posts by theme."
 - "Comment on the top post asking for a repro case."
+- "Freeze the Q3 retro board so no one can post any more."
 
-Out of the box the plugin exposes Padlet's **core** toolset — listing and searching your
-padlets, reading board content, creating padlets, and creating, editing, connecting, and
-commenting on posts. Attachments (images, video, audio, documents) can be analysed too.
+## Tools
 
-The core set is intentionally small. Agent clients limit how many tools a model can see across
-*all* of your connected MCP servers, so this plugin stays out of the way of the rest of your
-setup.
+The plugin connects to Padlet's default tool list, about 20 tools. Most of them find, read, and
+edit padlets, posts, sections, and comments. Five action tools (`search_padlet_actions`,
+`describe_padlet_action`, and the three `run_padlet_*_action` tools) find and run everything else
+Padlet can do: padlet settings and sharing, collaborators, automations, grading, and, if you are
+an owner, admin, or teacher in a Padlet for Schools or Teams library, library administration.
+The [Padlet MCP server README](https://github.com/padlet/padlet-mcp#tools) lists every tool.
 
-## Using more of Padlet
+Agent clients limit how many tools a model can see across *all* of your connected MCP servers.
+The short list leaves room for the rest of your setup, so there is nothing to turn on or off.
 
-Padlet's MCP server also offers per-board administration (appearance, access, automations,
-grading) and school/team library administration (members, SSO, approved domains, content
-safety). Those aren't in the default set.
-
-Run **`/padlet-toolsets`** to see what's available and turn groups on or off. It shows you the
-current state, applies your change, and tells you how to reload.
-
-| Toolset | Tools | Contents |
-| --- | --- | --- |
-| `core` | 16 | Board and post reading, authoring, and commenting (enabled by default) |
-| `utility` | 2 | Current time and web search |
-| `board_admin` | 28 | Per-board appearance, access, collaborators, automations, grading |
-| `library` | 23 | School and team library membership, SSO, permissions, content safety |
-
-Enabling everything means 69 tools from Padlet alone, which will crowd out your other MCP
-servers — `/padlet-toolsets` warns you before doing that.
-
-The setting lives inside the installed plugin, so updating or reinstalling the plugin resets it
-to `core`. Re-run `/padlet-toolsets` to restore your selection.
+For a connection that can only find and read padlets, skip the plugin and register
+`https://mcp.padlet.com/read-only` with your client instead.
 
 ## Limitations
 
 - Padlet's Sandbox (whiteboard) format is only partially supported; other board formats are
   fully supported.
-- Deleting posts and sections is a soft delete and can be undone. A few operations —
-  deleting comments, automations, or custom fields, and removing collaborators or
-  invitations — are permanent, and are marked so that the agent asks you to confirm first.
+- Deleted posts and sections can be restored. Tools that overwrite what someone wrote, delete
+  something, or change a whole library in a way that can't be put back are marked destructive,
+  so clients that honour MCP tool annotations can ask you to confirm first.
 
 ## What this plugin talks to
 
@@ -99,10 +85,11 @@ Declared for review and for anyone auditing the plugin before installing it:
   this plugin contacts.
 - **Credentials:** none stored in this repo. Authentication is OAuth 2.1 with PKCE, performed by
   your agent client in the browser; tokens are held by the client, never by these files.
-- **Code execution:** none. This repository contains configuration and a skill document only —
-  no scripts, binaries, install hooks, or lifecycle hooks.
+- **Code execution:** none. This repository contains configuration and documentation only — no
+  scripts, binaries, skills, install hooks, or lifecycle hooks.
 - **Scope:** every action runs as the signed-in user and is bounded by Padlet's own permission
-  model. The plugin ships the `core` toolset; nothing is enabled without the user asking.
+  model. The agent can reach any action that user could take in Padlet, including padlet
+  settings and, for library owners, admins, and teachers, library administration.
 
 ## Repository layout
 
@@ -114,7 +101,6 @@ One plugin, one MCP registration, one manifest per host:
 .cursor-plugin/marketplace.json  Cursor catalog entry for this repository
 .grok-plugin/plugin.json         Grok Build manifest
 .grok-plugin/marketplace.json    Grok Build catalog entry for this repository
-skills/padlet-toolsets/SKILL.md  /padlet-toolsets skill
 assets/logo.svg                  Padlet mark, transparent background
 assets/logo-white-plate-512.png  Padlet mark on an opaque white plate, 1:1, for host listings
 ```

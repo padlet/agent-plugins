@@ -1,6 +1,6 @@
 {
   "name": "padlet",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Work with your Padlet boards through Padlet's hosted MCP server. Read, search, create, and edit padlets and posts in conversation. Sign in with your own Padlet account — no API keys.",
   "author": {
     "name": "Padlet",

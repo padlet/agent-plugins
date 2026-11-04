@@ -2,7 +2,7 @@
   "mcpServers": {
     "padlet": {
       "type": "http",
-      "url": "https://mcp.padlet.com/?toolsets=core"
+      "url": "https://mcp.padlet.com/"
     }
   }
 }
